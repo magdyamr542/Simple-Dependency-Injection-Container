@@ -77,3 +77,7 @@ personCollection.countPersonFrequencyAndPrint("bob", [
 "LogServiceHelper is logging: { list of names is  : bob,sam,saly,bob }";
 "LogServiceHelper is logging: {frequency of bob : 2}";
 ```
+
+### Conclusion
+
+use to decouple your services from the classes which use them for better testing and reusability
