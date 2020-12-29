@@ -1,5 +1,5 @@
 import { CounterService } from "./counter.service";
-import { ServiceConsumer, DependencyInjector } from "./index";
+import { ServiceConsumer, DependencyInjector } from "./DIContainer";
 import { LogService } from "./log.service";
 
 @ServiceConsumer()
