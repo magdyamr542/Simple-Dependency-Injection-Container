@@ -8,6 +8,8 @@ class PersonCollection {
     private readonly logger: LogService,
     private readonly counter: CounterService
   ) {}
+
+  // some bussiness logic
   countPersonFrequencyAndPrint(personName: string, listOfNames: string[]) {
     const frequency = this.counter.countFrequency(personName, listOfNames);
     this.logger.log("list of names is ", listOfNames);
