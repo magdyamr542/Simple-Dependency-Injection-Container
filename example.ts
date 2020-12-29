@@ -29,7 +29,7 @@ class Person {
 }
 
 const injector = new DependencyInjector();
-const ahmed: Person = injector.resolve<Person>(Person); // we can see here that we dont need to create the objects our self
+const ahmed = injector.resolve<Person>(Person); // we can see here that we dont need to create the objects our self
 console.log(
   "the coutner before incrementing from ahmed",
   ahmed.logger?.getCounter()
