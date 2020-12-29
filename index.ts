@@ -1,14 +1,20 @@
 import "reflect-metadata";
+
 // decorator to donate that the class which uses it can be injected in other classes
 export const Injectable = (): ClassDecorator => {
   return () => {};
 };
-export const ServiceUser = Injectable; // use to donate that the class is going to use dependeny injection inside of it
+
+export const ServiceConsumer = Injectable; // use to donate that the class is going to use dependeny injection inside of it
+
 export type ConstructorLike<T> = new (...params: any[]) => T;
 
-export class DependencyInjector {
+export interface DependencyInjectorInterface {
+  resolve: <T>(target: ConstructorLike<T>) => T;
+}
+export class DependencyInjector implements DependencyInjectorInterface {
   cache: { [dependencyName: string]: any } = {}; // cachin already created dependencies
-  
+
   /* Main method which is used to create the instances*/
   resolve<T>(target: ConstructorLike<T>): T {
     // check if we can resolve it from the cache
