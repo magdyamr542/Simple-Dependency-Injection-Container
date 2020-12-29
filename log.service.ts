@@ -1,4 +1,4 @@
-import { Injectable } from ".";
+import { Injectable } from "./DIContainer";
 
 @Injectable()
 export class LogServiceHelper {
